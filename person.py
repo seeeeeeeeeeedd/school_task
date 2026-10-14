@@ -15,6 +15,12 @@ class Person:
             self.__surname = 'Фамилия неизвестна'
             self.__age = 0
 
+    def get_role(self) -> str:
+        return 'Человек'
+
+    def greet(self) -> str:
+        return f'Привет я {self.get_role()}. Меня зовут {self.get_name()} {self.get_surname()}, мне {self.get_age()}.'
+
     def get_name(self) -> str:
         return self.__name
 
