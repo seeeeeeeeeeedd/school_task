@@ -1,32 +1,32 @@
 class Person:
-    def __init__(self, name: str, age: int, gender: str):
+    def __init__(self, name: str, surname: str, age: int):
         self.__min_age = 0
         self.__max_age = 100
 
-        is_valid_text = self.__is_valid_text(name, gender)
+        is_valid_text = self.__is_valid_text(name, surname)
         is_valid_number = self.__is_valid_number(age)
 
         if is_valid_text and is_valid_number:
             self.__name = name
+            self.__surname = surname
             self.__age = age
-            self.__gender = gender
         else:
             self.__name = 'Имя неизвестно'
+            self.__surname = 'Фамилия неизвестна'
             self.__age = 0
-            self.__gender = 'Гендер неизвестен'
 
     def get_name(self) -> str:
         return self.__name
 
+    def get_surname(self) -> str:
+        return self.__surname
+
     def get_age(self) -> int:
         return self.__age
 
-    def get_gender(self) -> str:
-        return self.__gender
-
-    def __is_valid_text(self, name: str, gender: str) -> bool:
-        if isinstance(name, str) and isinstance(gender, str):
-            if name.strip() and gender.strip():
+    def __is_valid_text(self, name: str, surname: str) -> bool:
+        if isinstance(name, str) and isinstance(surname, str):
+            if name.strip() and surname.strip():
                 return True
 
         return False
