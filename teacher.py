@@ -8,12 +8,12 @@ class Teacher(Person):
         is_valid = self.__is_valid_subject(subject)
 
         if is_valid:
-            self.__subject = subject
+            self.__subject = subject.lower()
         else:
             self.__subject = 'Неизвестный предмет'
 
     def get_role(self) -> str:
-        return 'Учитель'
+        return 'учитель'
 
     def greet(self) -> str:
         basic_info = super().greet()

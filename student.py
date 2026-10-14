@@ -8,12 +8,12 @@ class Student(Person):
         is_valid = self.__is_valid_faculty(faculty)
 
         if is_valid:
-            self.__faculty = faculty
+            self.__faculty = faculty.lower()
         else:
             self.__faculty = 'Неизвестный факультет'
 
     def get_role(self) -> str:
-        return 'Студент'
+        return 'студент'
 
     def greet(self) -> str:
         basic_info = super().greet()

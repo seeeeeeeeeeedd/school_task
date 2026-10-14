@@ -7,8 +7,8 @@ class Person:
         is_valid_number = self.__is_valid_number(age)
 
         if is_valid_text and is_valid_number:
-            self.__name = name
-            self.__surname = surname
+            self.__name = name.title()
+            self.__surname = surname.title()
             self.__age = age
         else:
             self.__name = 'Имя неизвестно'
@@ -19,7 +19,7 @@ class Person:
         return 'Человек'
 
     def greet(self) -> str:
-        return f'Привет я {self.get_role()}. Меня зовут {self.get_name()} {self.get_surname()}, мне {self.get_age()}.'
+        return f'Привет, я {self.get_role()}. Меня зовут {self.get_name()} {self.get_surname()}, мне {self.get_age()}.'
 
     def get_name(self) -> str:
         return self.__name
